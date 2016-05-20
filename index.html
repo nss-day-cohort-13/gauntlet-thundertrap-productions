@@ -197,10 +197,38 @@ WEAPONS
         </a>
       </div>
     </section>
-
-    <section id="battleground" class="card card--battleground"></section>
-
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                   <!-- BATTLEGROUND -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <section id="battleground" class="card card--battleground">
+    <div class="card__prompt">
+      <div><strong>Battleground!</strong>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="battleground"> <!-- wrapps the entire battleground area -->
+                <div class="stats">Stats
+                  <div id="playerStats" class="playerStats">Player</div>
+                  <button class="attack-button">ATTACK!</button>
+                  <div id="enemyStats" class="enemyStats">Enemy</div>
+                 <!-- human -->
+                 <div class="humanImg">
+                  <img src="/img/human.png">
+                 </div>
+                 <!-- orc -->
+                 <div class="humanImg">
+                  <img src="/img/orc.png">
+                 </div>
+                </div> <!-- class="stats" -->
+              </div> <!-- class="battleground" -->
+            </div> <!-- class="col-sm-4" -->
+          </div> <!-- class="row" -->
+        </div> <!-- class="container-fluid" -->
+      </div> <!-- battlegroudn div -->
+    </div> <!-- class="card__prompt" -->
+  </section>
   </article>
+
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="javascripts/weapons.js"></script>
