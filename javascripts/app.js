@@ -7,7 +7,7 @@ $(document).ready(function() {
         // console.log("button clicked", currentPlayer);
         Gauntlet.Combatants.Player.playerName = currentPlayer;
         console.log(" 1st log via (select class btn) - currentPlayer", currentPlayer);
-    })
+    });
 
 
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
         // e.preventDefault();
         currentClass = $(event.currentTarget).children(".btn__text").html()
         console.log(" 1st log (each/which class btn clicked) - currentClass", currentClass);
-    })
+    });
 
     // Which weapon you choose Click Function, attached to all weapons
     var currentWeapon;
@@ -25,7 +25,7 @@ $(document).ready(function() {
         // e.preventDefault()
         currentWeapon = $(event.currentTarget).children(".btn__weapon__text").html()
         console.log("currentWeapon", currentWeapon);
-    })
+    });
 
 
 
@@ -35,7 +35,6 @@ $(document).ready(function() {
         //switch statement to decide what the player selected for a weapon
         console.log("2nd log", currentClass);
         console.log("2nd log", currentPlayer);
-
         player = new Gauntlet.Combatants.Player();
         console.log("player health", player.health );
         player.playerName = currentPlayer;
@@ -60,14 +59,16 @@ $(document).ready(function() {
                 player.class = new Gauntlet.GuildHall.Monk();
                 break;
         }
-    })
+    });
 
 
 
     // Defeat Your Enemies Click Function
+    var enemy;
     $("#defeat_your_enemies_button").click(function() {
         console.log("Clicked - defeat your enemies");
         console.log("currentWeapon", currentWeapon);
+        console.log(player);
 
         switch (currentWeapon) {
 
@@ -87,17 +88,14 @@ $(document).ready(function() {
               break;
 
         }
-    })
+        enemy = new Gauntlet.Combatants.Orc();
+    });
 
 
 
+    $("#attack_button").click(function battleground () {
 
-
-
-
-    // $("#attack_button").click(function battleground () {
-
-    // })
+    });
 
 
 
