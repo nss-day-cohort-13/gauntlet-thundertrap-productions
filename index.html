@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="card__button">
+      <div id="class_button" class="card__button">
         <a class="card__link btn btn--big btn--orange"
            href="#"
            next="card--class">
@@ -64,7 +64,7 @@
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
-                <span class="btn__text">berserker</span>
+                <span class="btn__text">Berserker</span>
               </a>
             </div>
 
@@ -130,7 +130,7 @@
         </div>
       </div>
 
-      <div class="card__button">
+      <div id="weapon_button" class="card__button">
         <a class="card__link btn btn--big btn--orange"
            href="#"
            next="card--weapon">
@@ -159,21 +159,21 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="card__button">
-          <a class="class__link btn btn--big btn--blue" href="#">
+          <a class="weapon__link btn btn--big btn--blue" href="#">
             <span class="btn__prompt">></span>
-            <span class="btn__text">Dagger</span>
+            <span class="btn__weapon__text">Dagger</span>
           </a>
         </div>
        <div class="card__button">
-         <a class="class__link btn btn--big btn--blue" href="#">
+         <a class="weapon__link btn btn--big btn--blue" href="#">
           <span class="btn__prompt">></span>
-          <span class="btn__text">Broad Sword</span>
+          <span class="btn__weapon__text">Broad Sword</span>
         </a>
        </div>
        <div class="card__button">
-         <a class="class__link btn btn--big btn--blue" href="#">
+         <a class="weapon__link btn btn--big btn--blue" href="#">
           <span class="btn__prompt">></span>
-          <span class="btn__text">War Axe</span>
+          <span class="btn__weapon__text">War Axe</span>
         </a>
        </div>
 
@@ -182,7 +182,7 @@
   </div>
 
 
-      <div class="card__button">
+      <div id="defeat_your_enemies_button" class="card__button">
         <a class="card__link btn btn--big btn--orange"
            href="#"
            next="card--battleground">
@@ -197,22 +197,30 @@
   <section id="battleground" class="card card--battleground">
     <div class="card__prompt">
       <div><strong>Battleground!</strong>
+        <div>
+          <a class="card__back btn btn--small"
+             href="#"
+             previous="card--class">
+            <span class="btn__prompt">&lt;</span>
+            <span class="btn__text">Back</span>
+          </a>
+        </div>
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-4">
-              <div class="battleground"> <!-- wrapps the entire battleground area -->
+              <div class="battleground"> <!-- wraps the entire battleground area -->
                 <div class="stats">Stats
                   <div id="playerStats" class="playerStats">Player</div>
-                  <button class="attack-button">ATTACK!</button>
+                  <button id="attack_button" class="attack__button">ATTACK!</button>
                   <div id="enemyStats" class="enemyStats">Enemy</div>
-                 <!-- human -->
+                 <!-- HUMAN div/img -->
                  <div class="humanImg">
                   <img src="/img/human.png">
-                 </div>
-                 <!-- orc -->
+                 </div> <!-- HUMAN div/img -->
+                 <!-- ORC div/img -->
                  <div class="humanImg">
                   <img src="/img/orc.png">
-                 </div>
+                 </div> <!-- ORC div/img -->
                 </div> <!-- class="stats" -->
               </div> <!-- class="battleground" -->
             </div> <!-- class="col-sm-4" -->
