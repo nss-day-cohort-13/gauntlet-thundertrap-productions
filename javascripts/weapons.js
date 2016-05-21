@@ -1,4 +1,4 @@
-var Weapon = function() {
+var Weapon = function() { // constructor function for all weapons
   this.name = "bare hands";
   this.damage = 1;
   this.hands = 2;
@@ -8,6 +8,8 @@ var Weapon = function() {
   }
 };
 
+
+// All weapons below will be a prototype of - new Weapon()
 var Dagger = function() {
   this.name = "dagger";
   this.damage = 4;

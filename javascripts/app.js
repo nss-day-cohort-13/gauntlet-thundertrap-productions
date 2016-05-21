@@ -1,7 +1,15 @@
 $(document).ready(function() {
 
-    // Click Function on the (select class button) on the home screen, this will hold the value of the players name to use later in the DOM/console
+    // Global variables
     var currentPlayer = '';
+    var currentClass;
+    var player;
+    var orc;
+
+
+
+    // Click Function on the (select class button) on the home screen, this will hold the value of the players name to use later in the DOM/console
+
     $("#class_button").click(function(e) {
         currentPlayer = $("#player-name").val();
         // console.log("button clicked", currentPlayer);
@@ -12,7 +20,7 @@ $(document).ready(function() {
 
 
     // Which class you choose Click Function, attached to all classes
-    var currentClass;
+
     $(".class__link").on("click", function(e) {
         // e.preventDefault();
         currentClass = $(event.currentTarget).children(".btn__text").html()
@@ -30,14 +38,14 @@ $(document).ready(function() {
 
 
     // Select Your Weapon Click Function
-    var player;
+    // var player;
     $("#weapon_button").click(function() {
         //switch statement to decide what the player selected for a weapon
         console.log("2nd log", currentClass);
         console.log("2nd log", currentPlayer);
 
         player = new Gauntlet.Combatants.Player();
-        console.log("player health", player.health );
+        console.log("player health", player.health);
         player.playerName = currentPlayer;
         console.log("player, now that inherits new Gauntlet.Combatants.Player() function and now you can target the (this.whatever) in player.js", player.playerName);
 
@@ -71,62 +79,26 @@ $(document).ready(function() {
 
         switch (currentWeapon) {
 
-          case "Dagger":
-             player.weapon = new Dagger();
-              console.log("player", player);
-              break;
+            case "Dagger":
+                player.weapon = new Dagger();
+                console.log("player", player);
+                battleground();
+                break;
 
-          case "Broad Sword":
-             player.weapon = new BroadSword();
-              console.log("player", player);
-              break;
+            case "Broad Sword":
+                player.weapon = new BroadSword();
+                console.log("player", player);
+                battleground();
+                break;
 
-          case "War Axe":
-             player.weapon = new WarAxe();
-              console.log("player", player);
-              break;
+            case "War Axe":
+                player.weapon = new WarAxe();
+                console.log("player", player);
+                battleground();
+                break;
 
         }
     })
-
-
-
-
-
-
-
-    // $("#attack_button").click(function battleground () {
-
-    // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // Get players health to use
     var playerHealth = function() {
@@ -134,6 +106,60 @@ $(document).ready(function() {
         return player.health;
     }
 
+    $("#attack_button").click(function attack() {
+
+        player.health -= orc.weapon.damage;
+        orc.health -= player.weapon.damage;
+
+        console.log("orc.weapon.damage", orc.weapon.damage);
+        console.log("orc.weapon.damage", orc.health);
+        console.log("player.weapon.damage", player.weapon.damage);
+        console.log("player.weapon.damage", player.health);
+
+
+        playerOutput = `<p>${player.class} ${player.playerName}</p>` +
+            `<div class="health">Health: ${player.health}</div>`;
+        $(".playerStats").html(playerOutput);
+
+        enemyOutput = `<p>${orc.monsterName}</p>` +
+            `<div class="health">Health: ${orc.health}</div>`;
+        $(".enemyStats").html(enemyOutput);
+
+        if (player.health <= 0 && player.health < orc.health) {
+            alert(`${player.playerName}` + " LOOSES!");
+            $(".attack-button").addClass("hide");
+        }
+        if (orc.health <= 0 && orc.health < player.health) {
+            alert(`${player.playerName}` + " WINS!");
+            $(".attack-button").addClass("hide");
+        }
+    })
+
+
+    // battleground function does a lot,
+        // it is called a few times in the function starting on line 76
+    function battleground() {
+        console.log("Players name: ", player.playerName);
+        console.log("Players class:", player.class);
+        console.log("Players stats: ", player.health);
+
+        // Sets Orc to the inheritance of the Orc constructor function
+        orc = new Gauntlet.Combatants.Orc();
+        orc.setWeapon(new BroadSword()); //
+        orc.generateClass();
+        orc.playerName = "Enemy Orc";
+        console.log(orc.toString());
+
+        // Populates the DOM with the players initial stats
+        playerOutput = `<p>${player.class} ${player.playerName}</p>` +
+            `<div class="health">Health: ${player.health}</div>`;
+        $(".playerStats").html(playerOutput);
+
+        enemyOutput = `<p>${orc.monsterName}</p>` +
+            `<div class="health">Health: ${orc.health}</div>`;
+        $(".enemyStats").html(enemyOutput);
+
+    };
 
 
     //COMMENTING IT OUT UNTIL NEEDED
@@ -155,7 +181,6 @@ $(document).ready(function() {
     //  */
     // var spell = new Gauntlet.SpellBook.Sphere();
     // console.log("spell: ", spell.toString());
-
 
 
     /*
