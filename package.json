@@ -1,0 +1,28 @@
+
+{
+  "name": "gauntlet",
+  "version": "1.0.0",
+  "description": "action game",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-day-cohort-13/gauntlet-thundertrap-productions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-13/gauntlet-thundertrap-productions/issues"
+  },
+  "homepage": "https://github.com/nss-day-cohort-13/gauntlet-thundertrap-productions#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-watch": "^4.3.5",
+    "jquery": "^2.2.3",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
+  }
+}

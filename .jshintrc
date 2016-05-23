@@ -1,0 +1,12 @@
+{
+  "predef": [ "document", "console.log", "angular", "require", "$", "alert" ],
+  "esversion": 6,
+  "globalstrict": true,
+  "curly": true,
+  "eqeqeq": true,
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "SomeGlobalVariableYouWantToUse": true
+  }
+}
