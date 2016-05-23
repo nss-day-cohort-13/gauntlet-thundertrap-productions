@@ -94,26 +94,22 @@ var Gauntlet = (function(aug) {
 
       playerOutput = `<p>${player.toString()}</p>` +
         `<div class="health">Health: ${player.health}</div>`;
-      $(".playerStats").html(playerOutput);
+      $("#playerStats").html(playerOutput);
 
       enemyOutput = `<p>${orc.toString()}</p>` +
         `<div class="health">Health: ${orc.health}</div>`;
-      $(".enemyStats").html(enemyOutput);
+      $("#enemyStats").html(enemyOutput);
 
 
       if (player.health <= 0 && player.health < orc.health) {
-        player.health.val("0");
         alert(`${player.playerName} LOSES!`);
         console.log("lose");
         $("#attack_button").attr("disabled", true).addClass("disabledButton");
       } else if (orc.health <= 0 && orc.health < player.health) {
-        orc.health.val("0");
         alert(`${player.playerName} WINS!`);
         console.log("win");
         $("#attack_button").attr("disabled", true).addClass("disabledButton");
       } else if (player.health === 0 && player.health === orc.health) {
-        player.health.val("0");
-        orc.health.val("0");
         alert(`You both lose! HAHAHAHAHA`);
         console.log("yall suck");
         $("#attack_button").attr("disabled", true).addClass("disabledButton");
@@ -132,17 +128,15 @@ var Gauntlet = (function(aug) {
       orc.setWeapon(new aug.weapons.BroadSword());
       orc.generateClass();
       orc.playerName = "Enemy Orc";
-      enemyOutput = `<p>${orc.toString()}</p></br><p><div class="health">Health: ${orc.health}</div></p>`;
-      $(".enemyStats").html(enemyOutput);
 
       // Populates the DOM with the players initial stats
       playerOutput = `<p>${player.toString()}</p>` +
         `<div class="health">Health: ${player.health}</div>`;
-      $(".playerStats").html(playerOutput);
+      $("#playerStats").html(playerOutput);
 
       var enemyOutput = `<p>${orc.toString()}</p>` +
         `<div class="health">Health: ${orc.health}</div>`;
-      $(".enemyStats").html(enemyOutput);
+      $("#enemyStats").html(enemyOutput);
 
     }
     /*
@@ -155,25 +149,25 @@ var Gauntlet = (function(aug) {
       move on to the next view.
      */
     $(".card__link").click(function() {
-        var nextCard = $(this).attr("next");
-        var moveAlong = false;
+      var nextCard = $(this).attr("next");
+      var moveAlong = false;
 
-        switch (nextCard) {
-          case "card--class":
-            moveAlong = ($("#player-name").val() !== "");
-            break;
-          case "card--weapon":
-            moveAlong = ($("#player-name").val() !== "");
-            break;
-          case "card--battleground":
-            moveAlong = ($("#player-name").val() !== "");
-            break;
-        }
+      switch (nextCard) {
+        case "card--class":
+          moveAlong = ($("#player-name").val() !== "");
+          break;
+        case "card--weapon":
+          moveAlong = ($("#player-name").val() !== "");
+          break;
+        case "card--battleground":
+          moveAlong = ($("#player-name").val() !== "");
+          break;
+      }
 
-        if (moveAlong) {
-          $(".card").hide();
-          $("." + nextCard).show();
-        }
+      if (moveAlong) {
+        $(".card").hide();
+        $("." + nextCard).show();
+      }
     });
 
     /*
