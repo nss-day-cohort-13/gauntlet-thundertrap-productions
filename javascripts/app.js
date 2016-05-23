@@ -88,7 +88,7 @@ var Gauntlet = (function(aug) {
     var playerOutput;
     var enemyOutput;
     $("#attack_button").click(function attack() {
-
+      // console.log('attack')
       player.health -= orc.weapon.damage;
       orc.health -= player.weapon.damage;
 
