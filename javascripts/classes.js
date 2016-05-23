@@ -134,10 +134,10 @@ var Gauntlet = (function(aug){
 
 
   /*
-      STEALTH CLASSES
-        - Thief
-        - Ninja
-        - Assassin
+    STEALTH CLASSES
+      - Thief
+      - Ninja
+      - Assassin
    */
 
   return aug;

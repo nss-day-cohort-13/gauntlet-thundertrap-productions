@@ -3,10 +3,13 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  background-color: #696969;
+  color: #fff;
 }
 
 .field {
   margin: 20px 0 0 0;
+  color: #000;
 }
 
 .field__textinput {
@@ -18,9 +21,9 @@ body {
 
 
 
-/*
+/**************************
   Section styles
- */
+ **************************/
 .card {
   display: none;
 }
@@ -39,9 +42,9 @@ body {
 }
 
 
-/*
+/***************************
   Button styles
- */
+ ****************************/
 
 .btn {
   text-decoration: none;
@@ -104,6 +107,35 @@ body {
   border-radius: 0 5px 5px 0;
 }
 
-.disabledButton {
-  color: lightgrey;
+
+/*********************************************
+BATTLEGROUND
+**********************************************/
+
+#playerStats {
 }
+
+#enemyStats {
+}
+
+#attack_button {
+  font-weight: bold;
+  color: #000;
+  display: inline-block;
+}
+
+.battleGroundImg {
+  display: inline;
+}
+
+
+
+
+/*********************************************
+TEMP REMEMBER TO UNDO THE COMMENTING ON THE .CARD DISPLAY
+**********************************************/
+
+/*#player-setup, #class-select, #weapon-select {
+  display: none;
+}
+*/

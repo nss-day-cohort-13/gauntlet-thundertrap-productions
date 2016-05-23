@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
 </head>
 
-<body>
+<body background="img/god-of-war-arena.jpg">
 
   <article id="game-container">
 
@@ -198,43 +198,62 @@
     <div class="card__prompt">
       <div><strong>Battleground!</strong>
         <div>
-          <a class="card__back btn btn--small"
+<!--           <a class="card__back btn btn--small"
              href="#"
              previous="card--class">
             <span class="btn__prompt">&lt;</span>
             <span class="btn__text">Back</span>
           </a>
-        </div>
+ -->        </div>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="container">
               <div class="battleground"> <!-- wraps the entire battleground area -->
-                <div class="stats">Stats
-                  <div id="playerStats" class="playerStats">Player</div>
-                  <button id="attack_button" class="attack__button">ATTACK!</button>
-                  <div id="enemyStats" class="enemyStats">Enemy</div>
-                 <!-- HUMAN div/img -->
-                 <div class="humanImg">
-                  <img src="/img/human.png">
-                 </div> <!-- HUMAN div/img -->
-                 <!-- ORC div/img -->
-                 <div class="humanImg">
-                  <img src="/img/orc.png">
-                 </div> <!-- ORC div/img -->
-                </div> <!-- class="stats" -->
+                <div class="stats">
+                  <div class="col-sm-4">
+                    <div id="playerStats">Player Stats</div>
+                  </div> <!--  class="col-sm-4"> for player stats-->
+                  <div class="col-sm-4">
+                    <button id="attack_button" class="attack__button">ATTACK!</button>
+                  </div> <!--  class="col-sm-4"> for attack button-->
+                  <div class="col-sm-4">
+                    <div id="enemyStats">Enemy Stats</div>
+                  </div> <!--  class="col-sm-4"> for enemy stats-->
+                  <!-- HUMAN div/img -->
+                  <div class="col-md-6">
+ <!--                     <div class="humanImg battleGroundImg"> -->
+                      <img src="/img/human.png">
+                     </div> <!-- s -->
+<!--                   </div>   class="col-sm-pull-4"  HUMAN div/img
+ -->                   <!-- ORC div/img -->
+                  <div class="col-md-6">
+                     <!-- <div class="orcImg battleGroundImg"> -->
+                      <img src="/img/orc.png">
+                     </div> <!-- orc img -->
+  <!--                   </div>   class="col-sm-push-4" ORC div/img
+ -->                </div> <!-- class="stats" -->
               </div> <!-- class="battleground" -->
-            </div> <!-- class="col-sm-4" -->
+            </div> <!-- class="container" -->
           </div> <!-- class="row" -->
         </div> <!-- class="container-fluid" -->
-      </div> <!-- battlegroudn div -->
+      </div> <!-- battleground div -->
     </div> <!-- class="card__prompt" -->
+    <div>
+      <a class="card__back btn btn--small"
+       href="#"
+       previous="card--name">
+        <span class="btn__prompt">&lt;</span>
+        <span class="btn__text">Back</span>
+      </a>
+   </div>
+
   </section>
   </article>
 
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script src="javascripts/classes.js"></script>
   <script src="javascripts/weapons.js"></script>
+  <script src="javascripts/classes.js"></script>
   <script src="javascripts/spells.js"></script>
   <script src="javascripts/player.js"></script>
   <script src="javascripts/enemies.js"></script>
