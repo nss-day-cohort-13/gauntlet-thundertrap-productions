@@ -81,6 +81,44 @@ var Gauntlet = (function(aug){
   aug.Combatants.Human.prototype = new Gauntlet.Combatants.Player();
 
 
+
+
+
+  /*
+    Define the base properties for a magicians in a
+    constructor function.
+   */
+  aug.Combatants.Magician = function() {
+    var randomSkin;
+
+    this.species = "Magician";
+    this.intelligence = this.intelligence + 40;
+
+    this.skinColors.push("pale", "black", "white", "mountain blue");
+    randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
+    this.skinColor = this.skinColors[randomSkin];
+
+    this.allowedClasses = ["Sarman", "Wizard", "Conjurer", "Sorcerer"];
+  };
+  aug.Combatants.Magician.prototype = new Gauntlet.Combatants.Player();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /*
     Define the base properties for a monster in a
     constructor function.
@@ -93,6 +131,8 @@ var Gauntlet = (function(aug){
   };
 
   aug.Combatants.Monster.prototype = new Gauntlet.Combatants.Player();
+
+
 
   console.log("player", aug);
 
