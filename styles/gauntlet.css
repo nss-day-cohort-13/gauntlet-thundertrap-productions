@@ -4,12 +4,12 @@ body {
   padding: 10px;
   font-size: 3em;
   background-color: #696969;
-/*  background-image: no-repeat center fixed;
-*/  color: #fff;
+  color: #fff;
 }
 
 .field {
   margin: 20px 0 0 0;
+  color: #000;
 }
 
 .field__textinput {
@@ -24,10 +24,10 @@ body {
 /**************************
   Section styles
  **************************/
-/*.card {
+.card {
   display: none;
 }
-*/
+
 .card__prompt {
   font-size: 1.1em;
   font-weight: bold;
@@ -135,6 +135,7 @@ BATTLEGROUND
 TEMP REMEMBER TO UNDO THE COMMENTING ON THE .CARD DISPLAY
 **********************************************/
 
-#player-setup, #class-select, #weapon-select {
+/*#player-setup, #class-select, #weapon-select {
   display: none;
 }
+*/
