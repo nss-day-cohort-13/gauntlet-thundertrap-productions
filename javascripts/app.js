@@ -37,7 +37,6 @@ var Gauntlet = (function(aug) {
       player = new Gauntlet.Combatants.Player();
       player.playerName = currentPlayer;
 
-
       switch (currentClass) {
 
         case "Warrior":
@@ -49,8 +48,8 @@ var Gauntlet = (function(aug) {
           break;
 
         case "Berserker":
-	        player.class = new Gauntlet.GuildHall.Berserker();
-	        break;
+          player.class = new Gauntlet.GuildHall.Berserker();
+          break;
 
         case "Monk":
           player.class = new Gauntlet.GuildHall.Monk();
@@ -62,23 +61,23 @@ var Gauntlet = (function(aug) {
 
     // Defeat Your Enemies Click Function
     $("#defeat_your_enemies_button").click(function() {
-      switch (currentWeapon) {
-        case "Dagger":
-          player.weapon = new aug.weapons.Dagger();
-          battleground();
-          break;
+        switch (currentWeapon) {
+          case "Dagger":
+            player.weapon = new aug.weapons.Dagger();
+            battleground();
+            break;
 
-        case "Broad Sword":
-          player.weapon = new aug.weapons.BroadSword();
-          battleground();
-          break;
+          case "Broad Sword":
+            player.weapon = new aug.weapons.BroadSword();
+            battleground();
+            break;
 
-        case "War Axe":
-          player.weapon = new aug.weapons.WarAxe();
-          battleground();
-          break;
+          case "War Axe":
+            player.weapon = new aug.weapons.WarAxe();
+            battleground();
+            break;
 
-      }
+        }
     });
 
     // Get players health to use
@@ -94,28 +93,32 @@ var Gauntlet = (function(aug) {
       orc.health -= player.weapon.damage;
 
       playerOutput = `<p>${player.toString()}</p>` +
-          `<div class="health">Health: ${player.health}</div>`;
+        `<div class="health">Health: ${player.health}</div>`;
       $(".playerStats").html(playerOutput);
 
       enemyOutput = `<p>${orc.toString()}</p>` +
-          `<div class="health">Health: ${orc.health}</div>`;
+        `<div class="health">Health: ${orc.health}</div>`;
       $(".enemyStats").html(enemyOutput);
 
 
       if (player.health <= 0 && player.health < orc.health) {
-          alert(`${player.playerName} LOSES!`);
-          console.log("lose");
-          $("#attack_button").attr("disabled", true).addClass("disabledButton");
+        player.health.val("0");
+        alert(`${player.playerName} LOSES!`);
+        console.log("lose");
+        $("#attack_button").attr("disabled", true).addClass("disabledButton");
       } else if (orc.health <= 0 && orc.health < player.health) {
-          alert(`${player.playerName} WINS!`);
-          console.log("win");
-          $("#attack_button").attr("disabled", true).addClass("disabledButton");
+        orc.health.val("0");
+        alert(`${player.playerName} WINS!`);
+        console.log("win");
+        $("#attack_button").attr("disabled", true).addClass("disabledButton");
       } else if (player.health === 0 && player.health === orc.health) {
-          alert(`You both lose! HAHAHAHAHA`);
-          console.log("yall suck");
-          $("#attack_button").attr("disabled", true).addClass("disabledButton");
+        player.health.val("0");
+        orc.health.val("0");
+        alert(`You both lose! HAHAHAHAHA`);
+        console.log("yall suck");
+        $("#attack_button").attr("disabled", true).addClass("disabledButton");
       } else {
-      	console.log('A thing happened!');
+
       }
     });
 
@@ -134,11 +137,11 @@ var Gauntlet = (function(aug) {
 
       // Populates the DOM with the players initial stats
       playerOutput = `<p>${player.toString()}</p>` +
-          `<div class="health">Health: ${player.health}</div>`;
+        `<div class="health">Health: ${player.health}</div>`;
       $(".playerStats").html(playerOutput);
 
       var enemyOutput = `<p>${orc.toString()}</p>` +
-          `<div class="health">Health: ${orc.health}</div>`;
+        `<div class="health">Health: ${orc.health}</div>`;
       $(".enemyStats").html(enemyOutput);
 
     }
@@ -152,25 +155,25 @@ var Gauntlet = (function(aug) {
       move on to the next view.
      */
     $(".card__link").click(function() {
-      var nextCard = $(this).attr("next");
-      var moveAlong = false;
+        var nextCard = $(this).attr("next");
+        var moveAlong = false;
 
-      switch (nextCard) {
+        switch (nextCard) {
           case "card--class":
-              moveAlong = ($("#player-name").val() !== "");
-              break;
+            moveAlong = ($("#player-name").val() !== "");
+            break;
           case "card--weapon":
-              moveAlong = ($("#player-name").val() !== "");
-              break;
+            moveAlong = ($("#player-name").val() !== "");
+            break;
           case "card--battleground":
-              moveAlong = ($("#player-name").val() !== "");
-              break;
-      }
+            moveAlong = ($("#player-name").val() !== "");
+            break;
+        }
 
-      if (moveAlong) {
+        if (moveAlong) {
           $(".card").hide();
           $("." + nextCard).show();
-      }
+        }
     });
 
     /*
