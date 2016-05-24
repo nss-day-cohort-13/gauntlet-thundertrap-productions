@@ -26,12 +26,35 @@ var Gauntlet = (function(aug){
    */
   aug.SpellBook.Spell.Sphere = function() {
     this.name = "sphere";
-    this.damage = Math.floor(Math.random() * 10 + 10);
+    this.damage = Math.floor(Math.random() * 5 + 20);
 
     var random = Math.round(Math.random() * (this.damageTypes.length - 1));
     this.type = this.damageTypes[random];
   };
-  aug.SpellBook.Spell.Sphere.prototype = new Gauntlet.SpellBook.Spell();
+  aug.SpellBook.Spell.Sphere.prototype = new aug.SpellBook.Spell();
+
+
+aug.SpellBook.Spell.Fireball = function() {
+    this.name = "fireball";
+    this.damage = Math.floor(Math.random() * 20 + 10);
+
+    var random = Math.round(Math.random() * (this.damageTypes.length - 1));
+    this.type = this.damageTypes[random];
+  };
+  aug.SpellBook.Spell.Fireball.prototype = new aug.SpellBook.Spell();
+
+
+aug.SpellBook.Spell.Freeze = function() {
+    this.name = "freeze";
+    this.damage = Math.floor(Math.random() * 15 + 15);
+
+    var random = Math.round(Math.random() * (this.damageTypes.length - 1));
+    this.type = this.damageTypes[random];
+  };
+  aug.SpellBook.Spell.Freeze.prototype = new aug.SpellBook.Spell();
+
+
+
 
   console.log("spells", aug);
 

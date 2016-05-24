@@ -88,49 +88,49 @@ var Gauntlet = (function(aug){
   //       - Conujurer
   //       - Sorcerer
   //  */
-  // GuildHall.Mage = function() {
-  //   this.name = "Mage";
-  //   this.magical = true;
-  //   this.healthBonus = this.healthBonus - 10;
-  //   this.strengthBonus = this.strengthBonus - 20;
-  //   this.intelligenceBonus = this.intelligenceBonus + 20;
-  // };
-  // GuildHall.Mage.prototype = new Gauntlet.GuildHall.PlayerClass();
+  aug.GuildHall.Mage = function() {
+    this.name = "Mage";
+    this.magical = true;
+    this.healthBonus = this.healthBonus - 10;
+    this.strengthBonus = this.strengthBonus - 20;
+    this.intelligenceBonus = this.intelligenceBonus + 20;
+  };
+  aug.GuildHall.Mage.prototype = new aug.GuildHall.PlayerClass();
 
 
-  // GuildHall.Shaman = function() {
-  //   this.name = "Shaman";
-  //   this.healthBonus = this.healthBonus + 5;
-  //   this.strengthBonus = this.strengthBonus - 10;
-  //   this.intelligenceBonus = this.intelligenceBonus + 20;
-  // };
-  // GuildHall.Shaman.prototype = new Gauntlet.GuildHall.Mage();
+  aug.GuildHall.Shaman = function() {
+    this.name = "Shaman";
+    this.healthBonus = this.healthBonus + 5;
+    this.strengthBonus = this.strengthBonus - 10;
+    this.intelligenceBonus = this.intelligenceBonus + 20;
+  };
+  aug.GuildHall.Shaman.prototype = new aug.GuildHall.Mage();
 
 
-  // GuildHall.Wizard = function() {
-  //   this.name = "Wizard";
-  //   this.healthBonus = this.healthBonus - 15;
-  //   this.strengthBonus = this.strengthBonus - 25;
-  //   this.intelligenceBonus = this.intelligenceBonus + 40;
-  // };
-  // GuildHall.Wizard.prototype = new Gauntlet.GuildHall.Mage();
+  aug.GuildHall.Wizard = function() {
+    this.name = "Wizard";
+    this.healthBonus = this.healthBonus - 15;
+    this.strengthBonus = this.strengthBonus - 25;
+    this.intelligenceBonus = this.intelligenceBonus + 40;
+  };
+  aug.GuildHall.Wizard.prototype = new aug.GuildHall.Mage();
 
 
-  // GuildHall.Conjurer = function() {
-  //   this.name = "Conjurer";
-  //   this.strengthBonus = this.strengthBonus - 10;
-  //   this.intelligenceBonus = this.intelligenceBonus + 10;
-  // };
-  // GuildHall.Conjurer.prototype = new Gauntlet.GuildHall.Mage();
+  aug.GuildHall.Conjurer = function() {
+    this.name = "Conjurer";
+    this.strengthBonus = this.strengthBonus - 10;
+    this.intelligenceBonus = this.intelligenceBonus + 10;
+  };
+  aug.GuildHall.Conjurer.prototype = new aug.GuildHall.Mage();
 
 
-  // GuildHall.Sorcerer = function() {
-  //   this.name = "Sorcerer";
-  //   this.healthBonus = this.healthBonus - 5;
-  //   this.strengthBonus = this.strengthBonus - 20;
-  //   this.intelligenceBonus = this.intelligenceBonus + 30;
-  // };
-  // GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
+  aug.GuildHall.Sorcerer = function() {
+    this.name = "Sorcerer";
+    this.healthBonus = this.healthBonus - 5;
+    this.strengthBonus = this.strengthBonus - 20;
+    this.intelligenceBonus = this.intelligenceBonus + 30;
+  };
+  aug.GuildHall.Sorcerer.prototype = new aug.GuildHall.Mage();
 
 
   /*
